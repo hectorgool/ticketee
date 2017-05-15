@@ -2,3 +2,15 @@
 gem 'rspec-rails', '~> 3.6'
 bundle
 
+rails g rspec:install
+
+spec/creating_projects_spec.rb
+bundle exec rspec 
+
+rails g controller projects
+
+rails routes
+
+rails g model project name description
+
+bundle exec rake db:migrate
