@@ -14,3 +14,11 @@ rails routes
 rails g model project name description
 
 bundle exec rake db:migrate
+
+spec/factories/project_factory.rb
+
+FactoryGirl.define do
+	factory :project do
+		name "Example project"
+	end
+end
