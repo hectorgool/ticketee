@@ -22,3 +22,15 @@ FactoryGirl.define do
 		name "Example project"
 	end
 end
+
+bundle exec rake assets:precompile
+bundle exec rake db:migrate RAILS_ENV=production
+
+In order for assets to be served correctly in the production environment while running a rails server session, you need to go into the config/environments/production.rb file and change this line,
+
+config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+to this:
+config.serve_static_files = true
+
+SECRET_KEY_BASE=`rake secret` rails s -e production
+
